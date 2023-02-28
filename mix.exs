@@ -15,7 +15,7 @@ defmodule Telephony.MixProject do
         "coveralls.post": :test,
         "coveralls.html": :test
       ]
-  ]
+    ]
   end
 
   # Run "mix help compile.app" to learn about applications.
