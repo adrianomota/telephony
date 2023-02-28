@@ -7,8 +7,15 @@ defmodule Telephony.MixProject do
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
-    ]
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ]
+  ]
   end
 
   # Run "mix help compile.app" to learn about applications.
@@ -26,7 +33,7 @@ defmodule Telephony.MixProject do
       {:credo, "~> 1.6"},
       {:excoveralls, "~> 0.15.3"},
       {:sobelow, "~> 0.11.1"},
-      {:dialyxir, "~> 1.2"}y
+      {:dialyxir, "~> 1.2"}
     ]
   end
 end
