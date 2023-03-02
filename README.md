@@ -1,3 +1,9 @@
+![Test](https://github.com/adrianomota/telephony/actions/workflows/tests.yml/badge.svg)
+![Dialyzer](https://github.com/adrianomota/telephony/actions/workflows/dialyzer.yml/badge.svg)
+![Format](https://github.com/adrianomota/telephony/actions/workflows/format.yml/badge.svg)
+![Credo](https://github.com/adrianomota/telephony/actions/workflows/lint.yml/badge.svg)
+![Security](https://github.com/adrianomota/telephony/actions/workflows/security.yml/badge.svg)
+
 # Telephony
 
 \*\*This project it's simple prototype in order to traine the elixir language.
