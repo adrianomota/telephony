@@ -9,7 +9,8 @@ defmodule Telephony.Core.CoreTest do
         id: nil,
         full_name: "Subscriber one",
         phone_number: "+5501199993331",
-        subscriber_type: :prepaid
+        subscriber_type: :prepaid,
+        calls: nil
       }
     ]
 

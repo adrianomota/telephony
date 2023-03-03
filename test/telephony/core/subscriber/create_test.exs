@@ -16,7 +16,8 @@ defmodule Telephony.Core.Subscriber.CreateTest do
         id: nil,
         full_name: "Subscriber Prepaid one",
         phone_number: "+5501199993333",
-        subscriber_type: %Prepaid{credits: 0, recharges: []}
+        subscriber_type: %Prepaid{credits: 0, recharges: []},
+        calls: nil
       }
 
       assert expected == susbscriber_created
@@ -35,7 +36,8 @@ defmodule Telephony.Core.Subscriber.CreateTest do
         id: nil,
         full_name: "Subscriber Pospaid one",
         phone_number: "+5501199993340",
-        subscriber_type: %Pospaid{spent: 0}
+        subscriber_type: %Pospaid{spent: 0},
+        calls: nil
       }
 
       assert expected == susbscriber_created
