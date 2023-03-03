@@ -33,7 +33,7 @@ defmodule Telephony.MixProject do
       {:credo, "~> 1.6"},
       {:excoveralls, "~> 0.15.3"},
       {:sobelow, "~> 0.11.1"},
-      {:dialyxir, "~> 1.2", only: [:dev]}
+      {:dialyxir, "~> 1.2", only: [:dev], runtime: false}
     ]
   end
 end
