@@ -1,7 +1,7 @@
-defmodule Telephony.Core.Subscriber.PrepaidTest do
+defmodule Telephony.Core.Subscriber.Prepaid.MakeCallTest do
   use ExUnit.Case
   alias Telephony.Core.{Call, Prepaid, Subscriber}
-  alias Telephony.Core.Prepaid.Create
+  alias Telephony.Core.Prepaid.MakeCall
 
   setup do
     subscriber = %Subscriber{
@@ -19,7 +19,7 @@ defmodule Telephony.Core.Subscriber.PrepaidTest do
     test "When all the params it's valid, make a call", %{subscriber: subscriber} do
       time_spent = 2
       date = NaiveDateTime.utc_now()
-      susbscriber_making_call = Create.call(subscriber, time_spent, date)
+      susbscriber_making_call = MakeCall.call(subscriber, time_spent, date)
 
       expected = %Subscriber{
         id: nil,
@@ -35,6 +35,18 @@ defmodule Telephony.Core.Subscriber.PrepaidTest do
       }
 
       assert susbscriber_making_call == expected
+    end
+
+    test "When the subscriber doesn't credit to spend, return error", %{subscriber: subscriber} do
+      %{subscriber_type: subscriber_type} = subscriber
+      subscriber_type = %{subscriber_type | credits: 0}
+      subscriber = %{subscriber | subscriber_type: subscriber_type}
+
+      time_spent = 2
+      date = NaiveDateTime.utc_now()
+      result = Prepaid.MakeCall.call(subscriber, time_spent, date)
+      expect = {:error, "Subscriber doesn't have credits"}
+      assert expect == result
     end
   end
 end
