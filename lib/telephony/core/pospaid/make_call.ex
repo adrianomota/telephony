@@ -1,5 +1,5 @@
 defmodule Telephony.Core.Pospaid.MakeCall do
-  alias Telephony.Core.{Call}
+  alias Telephony.Core.Call
   @price_per_minute 1.04
 
   def call(subscriber, time_spent, date) do
