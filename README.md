@@ -6,7 +6,7 @@
 
 # Telephony
 
-\*\*This project it's simple prototype in order to traine the elixir language.
+\*\*This project it's simple prototype in order to traine the elixir language fundamentals.
 
 ## Installation
 
